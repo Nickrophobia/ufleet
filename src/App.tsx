@@ -16,6 +16,7 @@ import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
 
 
+
 // pages
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
@@ -23,6 +24,7 @@ import PrivacyPage from './pages/PrivacyPage';
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const mainRef = useRef<HTMLDivElement>(null);
   const mainRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -136,6 +138,7 @@ function App() {
               
               {/* Header */}
               <Header />
+
 
 
               {/* Hero Section */}
