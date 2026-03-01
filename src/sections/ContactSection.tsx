@@ -211,27 +211,16 @@ const ContactSection = () => {
             style={{ opacity: 0, transform: 'translateX(4vw)' }}
           >
             <div className="relative h-full min-h-[400px] rounded-lg overflow-hidden">
-              <img
-                src="/contact_map.jpg"
-                alt="Network coverage map"
-                className="w-full h-full object-cover"
+              {/* Embedded Google Map */}
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.2344613549594!2d-88.2387777!3d42.01670239999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880f0684fdcfda47%3A0xb2d1af349e1eaab7!2s1325%20Bluff%20City%20Blvd%2C%20Elgin%2C%20IL%2060120%2C%20USA!5e0!3m2!1sen!2sge!4v1772377887067!5m2!1sen!2sge"
+                width="100%"
+                height="100%"
+                className="border-0"
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              
-              {/* Location Marker */}
-              <div
-                ref={markerRef}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-              >
-                <div className="relative">
-                  <div className="w-12 h-12 bg-gold rounded-full flex items-center justify-center shadow-lg">
-                    <MapPin className="w-6 h-6 text-navy" />
-                  </div>
-                  <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-gold" />
-                </div>
-              </div>
-
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
             </div>
           </div>
         </div>
