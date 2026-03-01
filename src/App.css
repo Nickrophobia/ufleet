@@ -1,0 +1,48 @@
+/* App-specific styles */
+
+/* Ensure smooth scrolling behavior */
+html {
+  scroll-behavior: auto;
+}
+
+/* Pin spacer styling for GSAP */
+.pin-spacer {
+  pointer-events: none !important;
+}
+
+.pin-spacer > * {
+  pointer-events: auto !important;
+}
+
+/* Ensure sections stack properly */
+.section-pinned {
+  will-change: transform;
+}
+
+/* Responsive adjustments for split sections */
+@media (max-width: 1024px) {
+  .image-panel,
+  .copy-panel {
+    position: relative !important;
+    width: 100% !important;
+    left: 0 !important;
+    height: 50vh !important;
+  }
+  
+  .copy-panel {
+    height: auto !important;
+    padding: 3rem 1.5rem !important;
+  }
+  
+  .copy-panel > div {
+    max-width: 100% !important;
+  }
+}
+
+/* Mobile hero adjustments */
+@media (max-width: 768px) {
+  .section-pinned {
+    min-height: 100vh;
+    height: auto !important;
+  }
+}
