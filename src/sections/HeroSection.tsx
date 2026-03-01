@@ -5,7 +5,11 @@ import { ArrowRight } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onQuote?: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onQuote }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
@@ -200,7 +204,10 @@ const HeroSection = () => {
         {/* CTA Buttons */}
         <div ref={ctaRef} className="flex flex-col sm:flex-row gap-4 mt-8" style={{ opacity: 0 }}>
           <button
-            onClick={() => scrollToSection('#contact')}
+            onClick={() => {
+              if (onQuote) onQuote();
+              else scrollToSection('#contact');
+            }}
             className="btn-gold inline-flex items-center gap-2 bg-gold text-navy font-semibold px-6 py-3 rounded text-sm"
           >
             Get a quote
@@ -229,7 +236,10 @@ const HeroSection = () => {
               Ready to ship?
             </span>
             <button
-              onClick={() => scrollToSection('#contact')}
+              onClick={() => {
+                if (onQuote) onQuote();
+                else scrollToSection('#contact');
+              }}
               className="inline-flex items-center gap-2 text-navy font-semibold text-sm hover:underline"
             >
               Get a quote <ArrowRight size={16} />
