@@ -71,3 +71,18 @@ export default defineConfig([
   },
 ])
 ```
+
+---
+
+## Deployment Instructions
+
+This project is configured to deploy easily to **Vercel**. After pushing to GitHub:
+
+1. Visit [https://vercel.com](https://vercel.com) and log in with GitHub.
+2. Click **New Project** and import the `ufleet` repository.
+3. Use the default settings (build command `npm run build`, output directory `dist`).
+4. Deploy and note the generated URL.
+
+You can also connect other hosts; the build output is in `dist/`.
+
+
