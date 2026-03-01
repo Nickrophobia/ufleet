@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './App.css';
@@ -15,8 +15,6 @@ import JoinFleetSection from './sections/JoinFleetSection';
 import ContactSection from './sections/ContactSection';
 import Footer from './sections/Footer';
 
-// new components
-import QuoteModal from './components/QuoteModal';
 
 // pages
 import TermsPage from './pages/TermsPage';
@@ -26,10 +24,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   const mainRef = useRef<HTMLDivElement>(null);
-  const [isQuoteOpen, setIsQuoteOpen] = useState(false);
-
-  const openQuote = () => setIsQuoteOpen(true);
-  const closeQuote = () => setIsQuoteOpen(false);
 
   useEffect(() => {
     // Wait for all sections to mount and create their ScrollTriggers
@@ -143,11 +137,9 @@ function App() {
               {/* Header */}
               <Header />
 
-              {/* Quote modal (global) */}
-              <QuoteModal isOpen={isQuoteOpen} onClose={closeQuote} />
 
               {/* Hero Section */}
-              <HeroSection onQuote={openQuote} />
+              <HeroSection />
 
               {/* Split Sections */}
               {splitSections.map((section, index) => (
